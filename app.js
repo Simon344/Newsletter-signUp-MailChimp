@@ -31,11 +31,12 @@ app.post("/", function(req, res){
         ]
     }
     let jsonData = JSON.stringify(data);    //stringify data for sending
-
-    const url = "https://us6.api.mailchimp.com/3.0/lists/3fc8447da9";
+    
+    //replace LIST_KEY with your list key and API_KEY with your API key
+    const url = "https://us6.api.mailchimp.com/3.0/lists/LIST_KEY";
     const options = {
         method: "POST",
-        auth: "cyemon:3674e1672d14eeddf6db1be0388881d0-us6"
+        auth: "cyemon:API_KEY"
     }
     const request = https.request(url, options, function(response){
         console.log(response.statusCode);
@@ -68,8 +69,3 @@ if (port == null || port == "") {
 app.listen(port, function(){
     console.log(`Server running on port ${port}`);
 })
-
-// list id 
-// 3fc8447da9
-//api key
-//3674e1672d14eeddf6db1be0388881d0-us6
